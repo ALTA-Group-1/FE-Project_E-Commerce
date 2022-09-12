@@ -1,0 +1,78 @@
+import React from 'react';
+import { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+
+const Dashboard = () => {
+  const navigate = useNavigate();
+  const [login, setLogin] = useState(true);
+
+  const goAddProduct = () => {
+    navigate('/addproduct');
+  };
+  const goCart = () => {
+    navigate('/cart');
+  };
+  const goDetail = () => {
+    navigate('/detail');
+  };
+  const goEditProduct = () => {
+    navigate('/editproduct');
+  };
+  const goEditProfile = () => {
+    navigate('/editprofile');
+  };
+  const goHistory = () => {
+    navigate('/history');
+  };
+  const goLogin = () => {
+    navigate('/login');
+  };
+  const goMyStore = () => {
+    navigate('/mystore');
+  };
+  const goMyProfile = () => {
+    navigate('/myprofile');
+  };
+
+  return (
+    <div>
+      Dashboard
+      <div>
+        <Button variant="primary" onClick={() => goAddProduct()}>
+          go add product
+        </Button>
+        <Button variant="primary" onClick={() => goCart()}>
+          go cart
+        </Button>
+        <Button variant="primary" onClick={() => goDetail()}>
+          go detail
+        </Button>
+        <Button variant="primary" onClick={() => goEditProduct()}>
+          go edit product
+        </Button>
+        <Button variant="primary" onClick={() => goEditProfile()}>
+          go edit profile
+        </Button>
+        <Button variant="primary" onClick={() => goHistory()}>
+          go history
+        </Button>
+        <Button variant="primary" onClick={() => goLogin()}>
+          go login
+        </Button>
+        <Button variant="primary" onClick={() => goMyStore()}>
+          go my store
+        </Button>
+        <Button variant="primary" onClick={() => goMyProfile()}>
+          go my profile
+        </Button>
+      </div>
+      <br></br>
+      <Button onClick={() => setLogin(!login)}>Toggle Navbar</Button>
+      <Navbar value={login} />
+    </div>
+  );
+};
+
+export default Dashboard;

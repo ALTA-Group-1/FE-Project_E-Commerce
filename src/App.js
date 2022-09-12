@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import AddProduct from './pages/AddProduct';
+import Cart from './pages/Cart';
+import Dashboard from './pages/Dashboard';
+import Detail from './pages/Detail';
+import EditProduct from './pages/EditProduct';
+import EditProfile from './pages/EditProfile';
+import History from './pages/History';
+import Login from './pages/Login';
+import MyStore from './pages/MyStore';
+import Profile from './pages/Profile';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route exact path="/" element={<Dashboard />} />
+        <Route path="/addproduct" element={<AddProduct />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/detail" element={<Detail />} />
+        <Route path="/editproduct" element={<EditProduct />} />
+        <Route path="/editprofile" element={<EditProfile />} />
+        <Route path="/history" element={<History />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/mystore" element={<MyStore />} />
+        <Route path="/myprofile" element={<Profile />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
