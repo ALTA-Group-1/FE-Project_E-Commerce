@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar';
 const Dashboard = () => {
   const navigate = useNavigate();
   const [login, setLogin] = useState(true);
-
+console.log(login);
   const goAddProduct = () => {
     navigate('/addproduct');
   };
