@@ -1,0 +1,26 @@
+.containerCard {
+  margin: 50px 35px 80px 35px;
+  width: 200px;
+}
+
+.image {
+  height: 250px;
+}
+
+.cardBody {
+  background-color: darkgray;
+  text-align: center;
+  height: 0px;
+}
+
+.title {
+  text-decoration: none;
+  padding-top: 20px;
+  color: black;
+}
+
+.btnProduct {
+  padding-top: 10px;
+  width: 200px;
+  justify-content: center;
+}
