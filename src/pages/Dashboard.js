@@ -73,7 +73,7 @@ console.log(login);
       </div>
       <br></br>
       <Button onClick={() => setLogin(!login)}>Toggle Navbar</Button>
-      <Navbar value={login} />
+      <Navbar value={login} total="1000" item="20" account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65"/>
       <Category />
       <div className="container">
         <ProductCard />

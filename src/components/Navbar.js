@@ -9,31 +9,38 @@ import { useLocation } from 'react-router-dom';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
 const NavBar = (props) => {
-const location = useLocation()
+  const location = useLocation()
   return (
     <div>
       Navbar
       <Navbar bg="light" expand="lg">
-        <Container fluid>
-          <Navbar.Brand href="#" className="ms-5 ps-5">
+        <Container fluid className='align-items-center justify-content-center'>
+          <Navbar.Brand href="#" className="ms-5 ps-5 me-0">
             <img src="https://cdn.discordapp.com/attachments/1017710027777257567/1018214691748708542/Si_Murah1.png" style={{ maxWidth: 100, maxHeight: 100 }}></img> Si Murah{' '}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="navbarScroll">
-            <Form className="d-flex col-5">
+          <Navbar.Collapse id="navbarScroll" className='align-items-center justify-content-center'>
+            <Form className="d-flex me-5">
               <Form.Control type="search" placeholder="Search" className="me-2" aria-label="Search" />
-              <Button variant="outline-success">Search</Button>
+              <Button variant="outline-success" className='me-5'>Search</Button>
             </Form>
-            <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
+            <Nav className=" my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
               {props.value ? (
                 <>
-                  <Nav.Link href="#action1">Home</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
+                  <Nav.Link href="#action1" className='me-5'>Login</Nav.Link>
+                  <Nav.Link href="#action2"></Nav.Link>
                 </>
               ) : (
                 <>
-                  <Nav.Link href="#action1">Login</Nav.Link>
-                  <Nav.Link href="#action2">Link</Nav.Link>
+                  <Nav.Link href="#action1" className='me-2 pe-0'><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16"
+                    className='p-0'>
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                  </svg></Nav.Link>
+                  <div className="me-5">
+                  <Nav.Link href="#action2" className='p-0'>$ {props.total}</Nav.Link>
+                  <Nav.Link href="#action2" className='p-0'>{props.item} item</Nav.Link>
+                  </div>
+                  <Nav.Link href="">Account <img src={props.account} width="25" height="25"></img></Nav.Link>
                 </>
               )}
             </Nav>
