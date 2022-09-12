@@ -1,0 +1,54 @@
+.category {
+  margin: 30px 0 0 0;
+}
+
+.book {
+  color: black;
+  width: 150px;
+  text-align: center;
+  background-color: #5affeb;
+  margin-right: 50px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+
+.home {
+    color: black;
+    width: 150px;
+    text-align: center;
+    background-color: #5affeb;
+    margin-right: 50px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.style {
+    color: black;
+    width: 150px;
+    text-align: center;
+    background-color: #5affeb;
+    margin-right: 50px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.electronic{
+    color: black;
+    width: 150px;
+    text-align: center;
+    background-color: #5affeb;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}

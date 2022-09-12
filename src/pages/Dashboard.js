@@ -1,8 +1,11 @@
 import React from 'react';
+import '../style/Dashboard.css';
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import ProductCard from '../components/ProductCard';
+import Category from '../components/Category';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -71,6 +74,10 @@ console.log(login);
       <br></br>
       <Button onClick={() => setLogin(!login)}>Toggle Navbar</Button>
       <Navbar value={login} />
+      <Category />
+      <div className="container">
+        <ProductCard />
+      </div>
     </div>
   );
 };
