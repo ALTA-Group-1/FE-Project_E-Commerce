@@ -70,7 +70,7 @@ console.log(login);
       </div>
       <br></br>
       <Button onClick={() => setLogin(!login)}>Toggle Navbar</Button>
-      <Navbar value={login} />
+      <Navbar value={login} total="1000" item="20"/>
     </div>
   );
 };
