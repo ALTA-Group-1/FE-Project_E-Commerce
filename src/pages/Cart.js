@@ -2,7 +2,6 @@ import React from 'react';
 import '../style/Cart.css';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
