@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import React from 'react';
 import '../style/Profile.css';
+import Navbar from '../components/Navbar';
 import { withRouter } from '../withRouter';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 
@@ -14,8 +15,8 @@ const Profile = () => {
 
   return (
     <>
-      <p>NAVBAR</p>
-      <Container className="container">
+      <Navbar />
+      <Container className="containerprof">
         <Row>
           <Col sm={8}>
             <h2>Profile</h2>

@@ -110,7 +110,7 @@ const Dashboard = () => {
       <br></br>
       <Navbar value={status} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
       <Category />
-      <div className="container">
+      <div className="containerdb">
         <ProductCard />
       </div>
       <div>
