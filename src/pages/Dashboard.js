@@ -12,40 +12,33 @@ import Footer from '../components/Footer';
 const Dashboard = () => {
   const navigate = useNavigate();
 
-  const [token, setToken] = useState("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMwNTIzMTgsInVzZXJJZCI6OH0.LfHqP5JOTT2_VywqxDZiJWMtvmHgmA8fnfUfsf5VJ_g")
+  const [token, setToken] = useState('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMwNTIzMTgsInVzZXJJZCI6OH0.LfHqP5JOTT2_VywqxDZiJWMtvmHgmA8fnfUfsf5VJ_g');
   console.log(token);
 
-  const [status, setStatus] = useState(token == "" ? false : true)
+  const [status, setStatus] = useState(token == '' ? false : true);
   const config = {
-    headers: { Authorization: `Bearer ${token}` }
+    headers: { Authorization: `Bearer ${token}` },
   };
 
-  const urlProfile = "http://13.57.49.65/users"
+  const urlProfile = 'http://13.57.49.65/users';
 
-  const [profile, setProfile] = useState({})
+  const [profile, setProfile] = useState({});
   console.log(profile);
   const getProfile = async () => {
     await axios
-      .get(
-        urlProfile, config
-      )
+      .get(urlProfile, config)
       .then((response) => {
         console.log(response.data.data);
-        setProfile(response.data.data)
+        setProfile(response.data.data);
       })
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   useEffect(() => {
-    getProfile()
-  }, [])
-
-
-
-
-
+    getProfile();
+  }, []);
 
   const goAddProduct = () => {
     navigate('/addproduct');
@@ -77,7 +70,6 @@ const Dashboard = () => {
 
   return (
     <div>
-      Dashboard
       <div>
         <Button variant="primary" onClick={() => goAddProduct()}>
           go add product
@@ -110,6 +102,9 @@ const Dashboard = () => {
       <br></br>
       <Navbar value={status} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
       <Category />
+      <Button className="btnd" variant="info" onClick={() => goAddProduct()}>
+        Create Product
+      </Button>
       <div className="containerdb">
         <ProductCard />
       </div>
