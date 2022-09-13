@@ -1,16 +1,51 @@
 import React from 'react';
 import '../style/Dashboard.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import Category from '../components/Category';
+import axios from 'axios';
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const [login, setLogin] = useState(true);
-console.log(login);
+
+  const [token, setToken] = useState("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMwNTIzMTgsInVzZXJJZCI6OH0.LfHqP5JOTT2_VywqxDZiJWMtvmHgmA8fnfUfsf5VJ_g")
+  console.log(token);
+
+  const [status, setStatus] = useState(token == "" ? false : true)
+  const config = {
+    headers: { Authorization: `Bearer ${token}` }
+  };
+
+  const urlProfile = "http://13.57.49.65/users"
+
+  const [profile, setProfile] = useState({})
+  console.log(profile);
+  const getProfile = async () => {
+    await axios
+      .get(
+        urlProfile, config
+      )
+      .then((response) => {
+        console.log(response.data.data);
+        setProfile(response.data.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  useEffect(() => {
+    getProfile()
+  }, [])
+
+
+
+
+
+
   const goAddProduct = () => {
     navigate('/addproduct');
   };
@@ -72,8 +107,7 @@ console.log(login);
         </Button>
       </div>
       <br></br>
-      <Button onClick={() => setLogin(!login)}>Toggle Navbar</Button>
-      <Navbar value={login} total="1000" item="20" account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65"/>
+      <Navbar value={status} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
       <Category />
       <div className="container">
         <ProductCard />
