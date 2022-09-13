@@ -8,6 +8,7 @@ import EditProduct from './pages/EditProduct';
 import EditProfile from './pages/EditProfile';
 import History from './pages/History';
 import Login from './pages/Login';
+import Register from './pages/Register';
 import MyStore from './pages/MyStore';
 import Profile from './pages/Profile';
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/editprofile" element={<EditProfile />} />
         <Route path="/history" element={<History />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/mystore" element={<MyStore />} />
         <Route path="/myprofile" element={<Profile />} />
       </Routes>

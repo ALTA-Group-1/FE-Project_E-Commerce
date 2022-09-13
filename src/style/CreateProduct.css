@@ -1,0 +1,18 @@
+.pro-image{
+    width: 500px;
+}
+.form{
+    width: 700px;
+}
+.pro-image img{
+    width: 420px;
+    height: 420px;
+}
+.title-create{
+    display: flex;
+    justify-content: flex-start;
+}
+.sub-create{
+    display: flex;
+    justify-content: flex-end;
+}

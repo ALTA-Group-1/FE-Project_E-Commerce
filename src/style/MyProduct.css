@@ -1,0 +1,21 @@
+.content {
+    display: grid;
+    grid-template-columns: auto auto;
+    color: #000;
+}
+.content-image {
+    width: fit-content;
+    padding-right: 100px;
+}
+.content-image img {
+    width: 350px;
+    height: 350px;
+}
+.titlepro{
+    display: flex;
+    justify-content: flex-start;
+}
+.btnEdit{
+    display: flex;
+    justify-content: flex-end;
+}
