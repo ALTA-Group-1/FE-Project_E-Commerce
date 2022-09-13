@@ -8,12 +8,15 @@ import ProductCard from '../components/ProductCard';
 import Category from '../components/Category';
 import axios from 'axios';
 import Footer from '../components/Footer';
+import { useCookies } from 'react-cookie';
 
 const Dashboard = () => {
   const navigate = useNavigate();
 
   const [token, setToken] = useState("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMwNTIzMTgsInVzZXJJZCI6OH0.LfHqP5JOTT2_VywqxDZiJWMtvmHgmA8fnfUfsf5VJ_g")
-  console.log(token);
+
+  const [cookies,setCookies] = useCookies()
+  setCookies("token",token,{path: "/"})
 
   const [status, setStatus] = useState(token == "" ? false : true)
   const config = {
