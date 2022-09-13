@@ -1,0 +1,26 @@
+.container {
+    justify-content: center;
+}
+
+.col1 {
+    padding-top: 0px;
+    padding-right: 25px;
+  }
+
+  p {
+    width: 150px;
+  }
+  
+  .img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .col2 {
+    padding-top: 30px;
+  }
+  
+  .btn1 {
+    width: 150px;
+  }
+  

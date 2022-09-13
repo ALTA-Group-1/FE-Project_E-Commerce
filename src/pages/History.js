@@ -1,16 +1,39 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
-import { useNavigate } from 'react-router-dom'
+import React from 'react';
+import '../style/HistoryPage.css';
+import Navbar from '../components/Navbar';
+import { Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 
 const History = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
-    <div>History
+    <div>
       <div>
-        <Button onClick={() => navigate("/")}>Home</Button>
+        <Navbar />
+        <Container className="container">
+          <Row className="row">
+            <Col>
+              <h1>Order History</h1>
+            </Col>
+          </Row>
+        </Container>
+        <div>
+          <Container className="container">
+            <Row className="row">
+              <Col md={{ span: 6, offset: 0 }} className="col1">
+                <Card.Img variant="top" className="img" src="https://images.tokopedia.net/img/cache/300-square/product-1/2020/9/2/48125333/48125333_eb395cfa-025e-4c35-b52e-bb128514db19_700_700.webp?ect=4g" alt="gambar" />
+              </Col>
+              <Col md={{ span: 6, offset: 0 }} className="col2">
+                <h4>Product</h4>
+                <p>Rp 123</p>
+              </Col>
+            </Row>
+          </Container>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default History
+export default History;
