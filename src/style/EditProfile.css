@@ -1,24 +1,36 @@
-.con {
+.containerep {
+  padding-top: 30px;
   justify-content: center;
-  text-align: center;
+  display:flex
 }
 
-.container {
-  justify-content: center;
-  text-align: center;
+.nameep {
+  padding-bottom: 20px;
+  width: 350px;
 }
 
-.row {
-  justify-content: center;
-  text-align: center;
+.tellep {
+  padding-bottom: 20px;
+  width: 350px;
 }
 
-.col {
-  justify-content: center;
-  text-align: center;
+.addressep {
+  padding-bottom: 20px;
+  width: 350px;
 }
 
-h2 {
-  justify-content: center;
-  text-align: center;
+.mailep {
+  padding-bottom: 20px;
+  width: 350px;
+}
+
+.pwep {
+  padding-bottom: 30px;
+  width: 350px;
+}
+
+.btnep {
+  margin-bottom: 40px;
+  margin-left: 70px;
+  width: 200px;
 }
