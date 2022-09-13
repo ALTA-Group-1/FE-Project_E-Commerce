@@ -39,7 +39,7 @@ const NavBar = (props) => {
                   </Nav.Link>
                   <Nav.Link href="">
                     {' '}
-                    {props.name} <img src={props.account} width="25" height="25"></img>
+                    {props.name} <img src={props.account} width="25" height="25" onClick={() => navigate('/myprofile')}></img>
                   </Nav.Link>
                 </>
               ) : (
