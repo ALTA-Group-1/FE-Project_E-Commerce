@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import ProductCard from '../components/ProductCard';
 import Category from '../components/Category';
 import axios from 'axios';
+import Footer from '../components/Footer';
 
 const Dashboard = () => {
   const navigate = useNavigate();
@@ -111,6 +112,9 @@ const Dashboard = () => {
       <Category />
       <div className="container">
         <ProductCard />
+      </div>
+      <div>
+        <Footer />
       </div>
     </div>
   );
