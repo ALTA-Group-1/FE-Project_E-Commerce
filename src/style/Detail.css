@@ -1,0 +1,27 @@
+.container {
+    justify-content: center;
+}
+
+.col1 {
+    padding-top: 80px;
+    padding-right: 250px;
+  }
+
+  p {
+    width: 150px;
+  }
+  
+  .img {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .col2 {
+    padding-top: 75px;
+    /* width: 5px; */
+  }
+  
+  .btn1 {
+    width: 150px;
+  }
+  
