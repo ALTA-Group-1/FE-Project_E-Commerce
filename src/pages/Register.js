@@ -99,7 +99,7 @@ const Register = () => {
                     <div style={{ margin: '20px 20px', textAlign: 'center' }}>
                         Sudah punya akun? <Link to="/login">Login</Link>
                     </div>
-                    <Button variant="danger" type="submit" style={{ width: '100%' }} onClick={() => klikDaftar()}>
+                    <Button variant="info" type="submit" style={{ width: '100%' }} onClick={() => klikDaftar()}>
                         SIGN UP
                     </Button>
                 </Card>

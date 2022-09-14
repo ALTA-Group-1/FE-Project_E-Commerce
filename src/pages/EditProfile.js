@@ -37,10 +37,10 @@ const EditProfile = () => {
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" />
               </Form.Group>
-              <Button className="btnep" variant="info" type="submit">
-                Submit
-              </Button>
             </Form>
+            <Button className="btnep" variant="info" type="submit">
+              Submit
+            </Button>
           </Col>
         </Row>
       </Container>
