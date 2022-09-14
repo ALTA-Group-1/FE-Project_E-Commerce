@@ -1,6 +1,6 @@
-.bodycart {
+/* .bodycart {
     padding-bottom: 90px;
-}
+} */
 
 .containercart1 {
     padding-top: 30px;
@@ -18,7 +18,12 @@
 
   .colcart1 {
     padding-top: 0px;
-    padding-left: 125px;
+    padding-left: 55px;
+  }
+
+  .imgcart {
+    width: 150px;
+    height: 150px;
   }
 
   .colcart2 {

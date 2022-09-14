@@ -94,7 +94,7 @@ const Login = () => {
                     <div style={{ margin: '20px 20px', textAlign: 'center' }}>
                         Belum punya akun? <Link to="/register">Register</Link>
                     </div>
-                    <Button style={{ margin: '20px 20px', alignItems: 'center' }} onClick={() => submitLogin()}>
+                    <Button variant="info" style={{ margin: '20px 20px', alignItems: 'center' }} onClick={() => submitLogin()}>
                         LOGIN
                     </Button>
                 </Card>
