@@ -15,7 +15,7 @@ const NavBar = (props) => {
     <div>
       <Navbar bg="light" expand="lg">
         <Container fluid className="align-items-center justify-content-center">
-          <Navbar.Brand href="#" className="ms-5 ps-5 me-0">
+          <Navbar.Brand href="/" className="ms-5 ps-5 me-0">
             <img src="https://cdn.discordapp.com/attachments/1017710027777257567/1018214691748708542/Si_Murah1.png" style={{ maxWidth: 100, maxHeight: 100 }} onClick={() => navigate('/')}></img>{' '}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
