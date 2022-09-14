@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import { Container, Card, Row, Col, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import '../style/Login.css';
+import axios from 'axios';
 
 const Login = () => {
+    const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -16,11 +19,22 @@ const Login = () => {
         const value = e.target.value;
         setPassword(value);
     }
+
+    const submitLogin = () => {
+        const data ={
+            email: email,
+            password: password
+        }
+        axios.post('http://13.57.49.65/users', data)
+        .then(result => {
+            console.log(result.data);
+        })
+    }
         
   return (
     <div>
-        <div>
-            <img src="https://cdn.discordapp.com/attachments/1017710027777257567/1018214691748708542/Si_Murah1.png" className="img" alt="logo" />
+        <div href="#">
+            <img src="https://cdn.discordapp.com/attachments/1017710027777257567/1018214691748708542/Si_Murah1.png" className="img" alt="logo" onClick={() => navigate('/')} />
         </div>
         <Container style={{ paddingTop: '0px'}}>
             <Card style={{ width: '25rem' }} className="card">
@@ -46,7 +60,7 @@ const Login = () => {
                     <Form.Group className="mb-3" controlId="formBasicCheckbox">
                         <Form.Check type="checkbox" label="Check me out" />
                     </Form.Group>
-                    <Button variant="danger" type="submit" style={{ width: '100%'}}>
+                    <Button variant="danger" type="submit" style={{ width: '100%'}} onClick={submitLogin}>
                         LOGIN
                     </Button>
                 </Form>
