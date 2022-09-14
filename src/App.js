@@ -10,23 +10,27 @@ import History from './pages/History';
 import Login from './pages/Login';
 import MyStore from './pages/MyStore';
 import Profile from './pages/Profile';
+import { CookiesProvider } from "react-cookie";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route exact path="/" element={<Dashboard />} />
-        <Route path="/addproduct" element={<AddProduct />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/detail" element={<Detail />} />
-        <Route path="/editproduct" element={<EditProduct />} />
-        <Route path="/editprofile" element={<EditProfile />} />
-        <Route path="/history" element={<History />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/mystore" element={<MyStore />} />
-        <Route path="/myprofile" element={<Profile />} />
-      </Routes>
-    </BrowserRouter>
+    <CookiesProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Dashboard />} />
+          <Route path="/addproduct" element={<AddProduct />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/detail" element={<Detail />} />
+          <Route path="/editproduct" element={<EditProduct />} />
+          <Route path="/editprofile" element={<EditProfile />} />
+          <Route path="/history" element={<History />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/mystore" element={<MyStore />} />
+          <Route path="/myprofile" element={<Profile />} />
+        </Routes>
+      </BrowserRouter>
+    </CookiesProvider>
+
   );
 };
 

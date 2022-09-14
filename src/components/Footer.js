@@ -1,36 +1,45 @@
-import React from 'react'
-import { Stack } from 'react-bootstrap'
-import { Nav } from 'react-bootstrap'
-
+import React from "react";
+import {
+    Box,
+    Container,
+    Row,
+    Column,
+    FooterLink,
+    Heading,
+} from "./FooterStyles";
 
 const Footer = () => {
     return (
-        <footer style={{ backgroundColor: "#F6EEF4" }}>
-            <Stack gap={2} className="col-md-5 mx-auto text-center m-0 p-0" >
-                <div class="row">
-                    <div className='border-bottom'>
-                        <Nav className="justify-content-center" activeKey="/home">
-                            <Nav.Item>
-                                <Nav.Link href="" disabled>Active</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="link-1" disabled>Link</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="link-2" disabled>Link</Nav.Link>
-                            </Nav.Item>
-                            <Nav.Item>
-                                <Nav.Link eventKey="disabled" disabled>
-                                    Disabled
-                                </Nav.Link>
-                            </Nav.Item>
-                        </Nav>
-                    </div>
-                    <div>&copy; Copyright Alta-FE-08</div>
-                </div>
-            </Stack>
-        </footer>
-    )
-}
+        <Box><Container>
+            <Row>
+                <Column>
+                    <Heading>About Us</Heading>
+                    
+                </Column>
+                <Column>
+                    <Heading>Services</Heading>
+                   
+                </Column>
+                <Column>
+                    <Heading>Contact Us</Heading>
+                    
+                </Column>
+                <Column>
+                    <Heading>Social Media</Heading>
+                    
+                </Column>
+            </Row>
+        </Container>
+            <h3 style={{
+                color: "#d9d9d9",
+                textAlign: "center",
+                marginTop: "-50px",
+                borderTop: "solid #e6e6e6"
+            }}>
+                &copy;Copyright ALTA-FE08-1
+            </h3>
 
-export default Footer
+        </Box>
+    );
+};
+export default Footer;
