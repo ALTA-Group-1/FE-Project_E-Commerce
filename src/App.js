@@ -11,10 +11,12 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import MyStore from './pages/MyStore';
 import Profile from './pages/Profile';
+import { CookiesProvider } from 'react-cookie';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <CookiesProvider>
+      <BrowserRouter>
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
         <Route path="/addproduct" element={<AddProduct />} />
@@ -29,6 +31,7 @@ const App = () => {
         <Route path="/myprofile" element={<Profile />} />
       </Routes>
     </BrowserRouter>
+    </CookiesProvider>
   );
 };
 
