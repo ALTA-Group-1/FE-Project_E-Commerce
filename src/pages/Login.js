@@ -4,11 +4,13 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import '../style/Login.css';
 import axios from 'axios';
+import { useCookies } from 'react-cookie';
 
 const Login = () => {
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [cookies, setCookies] = useCookies()
 
     const onChangeEmail = (e) => {
         const value = e.target.value;
@@ -28,7 +30,7 @@ const Login = () => {
           
           var config = {
             method: 'post',
-            url: '13.57.49.65/auth',
+            url: 'http://13.57.49.65/auth',
             headers: { 
               'Content-Type': 'application/json'
             },

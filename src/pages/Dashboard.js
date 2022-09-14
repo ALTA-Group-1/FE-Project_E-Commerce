@@ -14,13 +14,9 @@ import { useCookies } from 'react-cookie';
 const Dashboard = () => {
   const navigate = useNavigate();
 
-  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMxMzUyNzQsInVzZXJJZCI6OH0.9blNunOtXrTjGWg0WqI7zrfols3l9jL87-NhiZNXdg4"
   const [cookies, setCookies] = useCookies()
-  const getCookies = () => {
-    setCookies("Token", token, { path: "/" })
-  }
   const config = {
-    headers: { Authorization: `Bearer ${token}` },
+    headers: { Authorization: `Bearer ${cookies.token}` },
   };
 
   const urlProfile = 'http://13.57.49.65/users';
@@ -40,7 +36,6 @@ const Dashboard = () => {
 
   useEffect(() => {
     getProfile()
-    getCookies()
   }, [])
 
 
@@ -108,7 +103,7 @@ const Dashboard = () => {
         </Button>
       </div>
       <br></br>
-      <Navbar value={token == ""? false : true} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
+      <Navbar value={cookies.token == ""? false : true} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
       <Category />
       <Button className="btnd" variant="info" onClick={() => goAddProduct()}>
         Create Product
