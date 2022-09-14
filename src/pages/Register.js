@@ -15,22 +15,11 @@ const Register = () => {
     const [password, setPassword] = useState("");
     // const [cookies, useCookies] = useCookies()
 
-    const onChangeName = (e) => {
-        setName(e.target.value);
-    }
-    const onChangeTelephone = (e) => {
-        setTelephone(e.target.value);
-    }
-    const onChangeAddress = (e) => {
-        setAddress(e.target.value);
-    }
-    const onChangeEmail = (e) => {
-        setEmail(e.target.value);
-    }
-    const onChangePassword = (e) => {
-        setPassword(e.target.value);
-    }
-    console.log(name, telephone, address, email, password);
+
+    // console.log(name, telephone, address, email, password);
+
+
+
     var data = JSON.stringify({
         "name": name,
         "phone": telephone,
@@ -39,28 +28,29 @@ const Register = () => {
         "password": password
     })
 
-    // var config = {
-    //     url: 'http://13.57.49.65/users',
-    //     headers: {
-    //         'Content-Type': 'application/json'
-    //     },
-    //     method: 'post',
-    //     data: data
-    // };
+    var config = {
+        method: 'post',
+        url: 'http://13.57.49.65/users',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        data: data
+    };
+
 
     const klikDaftar = async () => {
-
-        await axios.post("http://13.57.49.65/users", data, headers: { "Content-Type": "application/json" })
-            .then(result => {
-                console.log(result.data)
-            }).catch((error) => {
-                console.log(error.response.data);
+        await axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
             })
+            .catch(function (error) {
+                console.log(error.response.data);
+            });
     }
 
-    useEffect(() => {
-        klikDaftar()
-    }, [])
+    // useEffect(() => {
+    //     klikDaftar()
+    // }, [])
 
 
     return (
@@ -77,40 +67,41 @@ const Register = () => {
                         <Row>
                             <Form.Group className="mb-3">
                                 <Col><Form.Label>Full Name</Form.Label></Col>
-                                <Col><Form.Control type="text" placeholder="Full Name" onChange={onChangeName} /></Col>
+                                <Col><Form.Control type="text" placeholder="Full Name" onChange={(e) => setName(e.target.value)} value={name} /></Col>
                             </Form.Group>
                         </Row>
                         <Row>
                             <Form.Group className="mb-3">
                                 <Col><Form.Label>Telephone</Form.Label></Col>
-                                <Col><Form.Control type="text" placeholder="Telephone" onChange={onChangeTelephone} /></Col>
+                                <Col><Form.Control type="text" placeholder="Telephone" onChange={(e) => setTelephone(e.target.value)} value={telephone} /></Col>
                             </Form.Group>
                         </Row>
                         <Row>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Col><Form.Label>Address</Form.Label></Col>
-                                <Col><Form.Control as="textarea" placeholder="Address" rows={3} onChange={onChangeAddress} /></Col>
+                                <Col><Form.Control as="textarea" placeholder="Address" rows={3} onChange={(e) => setAddress(e.target.value)} value={address} /></Col>
                             </Form.Group>
                         </Row>
                         <Row>
                             <Form.Group className="mb-3" controlId="formBasicEmail">
                                 <Col><Form.Label>Email</Form.Label></Col>
-                                <Col><Form.Control type="email" placeholder="Enter email" onChange={(e) => onChangeEmail(e)} /></Col>
+                                <Col><Form.Control type="email" placeholder="Enter email" onChange={(e) => setEmail(e.target.value)} value={email} /></Col>
                             </Form.Group>
                         </Row>
                         <Row>
                             <Form.Group className="mb-3" controlId="formBasicPassword">
                                 <Col><Form.Label>Password</Form.Label></Col>
-                                <Col><Form.Control type="password" placeholder="Password" onChange={(e) => onChangePassword(e)} /></Col>
+                                <Col><Form.Control type="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} value={password} /></Col>
                             </Form.Group>
                         </Row>
-                        <Button variant="danger" type="submit" style={{ width: '100%' }} onClick={() => klikDaftar()}>
-                            SIGN UP
-                        </Button>
+
                     </Form>
                     <div style={{ margin: '20px 20px', textAlign: 'center' }}>
                         Sudah punya akun? <Link to="/login">Login</Link>
                     </div>
+                    <Button variant="danger" type="submit" style={{ width: '100%' }} onClick={() => klikDaftar()}>
+                        SIGN UP
+                    </Button>
                 </Card>
             </Container>
         </div>
