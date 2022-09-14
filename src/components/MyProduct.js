@@ -12,6 +12,7 @@ const MyProduct = () => {
             <div className="content-detail">
                 <h5>Product</h5>
                 <h5>Rp 123</h5>
+                <h5>Category</h5>
                 <h5>Quantity</h5>
                 <h5>Product Description</h5>
                 <p style={{ width: '100%'}}>Aoashi adalah serial manga Jepang yang ditulis dan diilustrasikan oleh Yūgo Kobayashi dan berdasarkan konsep oleh Naohiko Ueno. Ini telah diserialkan di majalah manga seinen Shogakukan Weekly Big Comic Spirits sejak Januari 2015.</p>

@@ -34,7 +34,13 @@ const CreateProduct = () => {
                     Category:
                     </Form.Label>
                     <Col sm="8">
-                    <Form.Control type="text" placeholder="Category" />
+                    <Form.Select aria-label="Default select example">
+                        <option>Category</option>
+                        <option value="1">Books</option>
+                        <option value="2">Home Living</option>
+                        <option value="3">Style</option>
+                        <option value="4">Electronic</option>
+                    </Form.Select>
                     </Col>
                 </Form.Group>
                 <Form.Group as={Row} className="mb-3" controlId="formPlaintextPassword">
