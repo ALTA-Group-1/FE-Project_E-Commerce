@@ -21,14 +21,27 @@ const Login = () => {
     }
 
     const submitLogin = () => {
-        const data ={
-            email: email,
-            password: password
-        }
-        axios.post('http://13.57.49.65/users', data)
-        .then(result => {
-            console.log(result.data);
-        })
+        var data = JSON.stringify({
+            "email": "email",
+            "password": "password"
+          });
+          
+          var config = {
+            method: 'post',
+            url: '13.57.49.65/auth',
+            headers: { 
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          
+          axios(config)
+          .then(function (response) {
+            console.log(response.data);
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
     }
         
   return (
