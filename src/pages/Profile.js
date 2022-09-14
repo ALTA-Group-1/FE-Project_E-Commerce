@@ -7,13 +7,13 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useCookies } from "react-cookie"
 import axios from 'axios';
 import Footer from '../components/Footer';
-import { useCookies } from "react-cookie"
-import axios from 'axios';
-import Footer from '../components/Footer';
+
+
+
 
 const Profile = () => {
   const navigate = useNavigate();
-  const [cookies, setCookies] = useCookies()
+
   const [cookies, setCookies] = useCookies()
   const editPage = () => {
     navigate('/editProfile', {});

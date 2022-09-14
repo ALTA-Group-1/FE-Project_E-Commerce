@@ -9,7 +9,7 @@ import Category from '../components/Category';
 import axios from 'axios';
 import Footer from '../components/Footer';
 import { useCookies } from 'react-cookie';
-import { useCookies } from 'react-cookie';
+
 
 const Dashboard = () => {
   const navigate = useNavigate();
