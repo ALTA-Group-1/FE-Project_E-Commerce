@@ -13,12 +13,12 @@ import { useCookies } from 'react-cookie';
 const Dashboard = () => {
   const navigate = useNavigate();
 
-  const [token, setToken] = useState("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMwNTIzMTgsInVzZXJJZCI6OH0.LfHqP5JOTT2_VywqxDZiJWMtvmHgmA8fnfUfsf5VJ_g")
-
-  const [cookies,setCookies] = useCookies()
-  setCookies("token",token,{path: "/"})
-
-  const [status, setStatus] = useState(token == "" ? false : true)
+  const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRob3JpemVkIjp0cnVlLCJleHAiOjE2NjMxMjM1NzIsInVzZXJJZCI6OH0.4sSzP15tkXROACJ4nFRDwBdQUcBWAQftXDoTtibPuP4"
+  const [cookies, setCookies] = useCookies()
+  const getCookies = () => {
+    setCookies("Token", token, { path: "/" })
+  }
+  console.log(cookies);
   const config = {
     headers: { Authorization: `Bearer ${token}` }
   };
@@ -33,7 +33,6 @@ const Dashboard = () => {
         urlProfile, config
       )
       .then((response) => {
-        console.log(response.data.data);
         setProfile(response.data.data)
       })
       .catch((error) => {
@@ -43,6 +42,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     getProfile()
+    getCookies()
   }, [])
 
 
@@ -111,7 +111,7 @@ const Dashboard = () => {
         </Button>
       </div>
       <br></br>
-      <Navbar value={status} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
+      <Navbar value={token === "" ? false : true} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
       <Category />
       <div className="containerdb">
         <ProductCard />
