@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import '../style/Profile.css';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { withRouter } from '../withRouter';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { useCookies } from "react-cookie"

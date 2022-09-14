@@ -1,0 +1,30 @@
+.bodycart {
+    padding-bottom: 90px;
+}
+
+.containercart1 {
+    padding-top: 30px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .containercart2 {
+    padding-top: 40px;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .colcart1 {
+    padding-top: 0px;
+    padding-left: 125px;
+  }
+
+  .colcart2 {
+    padding-top: 20px;
+  }
+
+  .colcart3 {
+    padding-top: 20px;
+  }

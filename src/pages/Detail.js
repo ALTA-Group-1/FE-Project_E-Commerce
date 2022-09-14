@@ -1,6 +1,7 @@
 import React from 'react';
 import '../style/Detail.css';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
@@ -9,7 +10,7 @@ const Detail = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <div>
+      <div className='bodydetail'>
         <Navbar />
         <div>
           <Container className="containerdetail">
@@ -31,6 +32,7 @@ const Detail = () => {
           </Container>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

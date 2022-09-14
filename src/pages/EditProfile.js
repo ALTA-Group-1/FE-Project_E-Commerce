@@ -2,6 +2,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import React from 'react';
 import '../style/EditProfile.css';
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import { Container, Row, Col, Button, Form } from 'react-bootstrap';
 import { withRouter } from '../withRouter';
 
@@ -43,6 +44,7 @@ const EditProfile = () => {
           </Col>
         </Row>
       </Container>
+      <Footer />
     </>
   );
 };

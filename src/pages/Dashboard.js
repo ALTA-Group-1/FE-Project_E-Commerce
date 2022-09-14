@@ -20,25 +20,23 @@ const Dashboard = () => {
   }
   console.log(cookies);
   const config = {
-    headers: { Authorization: `Bearer ${token}` }
+    headers: { Authorization: `Bearer ${token}` },
   };
 
-  const urlProfile = "http://13.57.49.65/users"
+  const urlProfile = 'http://13.57.49.65/users';
 
-  const [profile, setProfile] = useState({})
+  const [profile, setProfile] = useState({});
   console.log(profile);
   const getProfile = async () => {
     await axios
-      .get(
-        urlProfile, config
-      )
+      .get(urlProfile, config)
       .then((response) => {
         setProfile(response.data.data)
       })
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   useEffect(() => {
     getProfile()
@@ -80,7 +78,6 @@ const Dashboard = () => {
 
   return (
     <div>
-      Dashboard
       <div>
         <Button variant="primary" onClick={() => goAddProduct()}>
           go add product
@@ -113,6 +110,9 @@ const Dashboard = () => {
       <br></br>
       <Navbar value={token === "" ? false : true} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
       <Category />
+      <Button className="btnd" variant="info" onClick={() => goAddProduct()}>
+        Create Product
+      </Button>
       <div className="containerdb">
         <ProductCard />
       </div>

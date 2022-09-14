@@ -1,7 +1,7 @@
 import React from 'react';
 import '../style/HistoryPage.css';
 import Navbar from '../components/Navbar';
-import { Button } from 'react-bootstrap';
+import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
 
@@ -9,7 +9,7 @@ const History = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <div>
+      <div className='bodyhistory'>
         <Navbar />
         <Container className="containerhist1">
           <Row className="row">
@@ -32,6 +32,7 @@ const History = () => {
           </Container>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
