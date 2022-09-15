@@ -28,6 +28,7 @@ const Dashboard = () => {
       .get(urlProfile, config)
       .then((response) => {
         setProfile(response.data.data)
+        setCookies("name", response.data.data.name, "/")
       })
       .catch((error) => {
         console.log(error);
@@ -103,11 +104,17 @@ const Dashboard = () => {
         </Button>
       </div>
       <br></br>
-      <Navbar value={cookies.token == undefined? false : true} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
+      <Navbar />
       <Category />
-      <Button className="btnd" variant="info" onClick={() => goAddProduct()}>
-        Create Product
-      </Button>
+      {
+        cookies.token !== undefined ?
+          <>
+            <Button className="btnd" variant="info" onClick={() => goAddProduct()}>
+              Create Product
+            </Button>
+          </> :
+          null
+      }
       <div className="containerdb">
         <ProductCard />
       </div>
