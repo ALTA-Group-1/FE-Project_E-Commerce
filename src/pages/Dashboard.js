@@ -35,8 +35,23 @@ const Dashboard = () => {
       });
   };
 
+  const [product, setProduct] = useState()
+  console.log(product);
+  const getProduct = async () => {
+    await axios
+      .get("http://13.57.49.65/products")
+      .then((response) => {
+        setProduct(response.data.data)
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      })
+  }
+
+
   useEffect(() => {
     getProfile()
+    getProduct()
   }, [])
 
 
@@ -116,7 +131,19 @@ const Dashboard = () => {
           null
       }
       <div className="containerdb">
-        <ProductCard />
+        {
+          product == undefined ?
+            <>
+            </> :
+            <>
+              {
+                product.map((item) => {
+                  return (
+                    <ProductCard image={item.images} name={item.name} price={item.price} />
+                  )
+                })
+              }</>
+        }
       </div>
       <div>
         <Footer />
