@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import MyStore from './pages/MyStore';
 import Profile from './pages/Profile';
+import Checkout from './pages/Checkout';
 import { CookiesProvider } from 'react-cookie';
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/mystore" element={<MyStore />} />
         <Route path="/myprofile" element={<Profile />} />
+        <Route path="/checkout" element={<Checkout />} />
       </Routes>
     </BrowserRouter>
     </CookiesProvider>

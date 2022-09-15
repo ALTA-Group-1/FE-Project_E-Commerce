@@ -86,6 +86,9 @@ const Dashboard = () => {
   const goMyProfile = () => {
     navigate('/myprofile');
   };
+  const goCheckout = () => {
+    navigate('/checkout');
+  };
 
   return (
     <div>
@@ -116,6 +119,9 @@ const Dashboard = () => {
         </Button>
         <Button variant="primary" onClick={() => goMyProfile()}>
           go my profile
+        </Button>
+        <Button variant="primary" onClick={() => goCheckout()}>
+          go Checkout
         </Button>
       </div>
       <br></br>
