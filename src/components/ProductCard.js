@@ -98,11 +98,12 @@ const ProductCard = (props) => {
           </Card.Title>
         </a>
         <p>Rp {props.price}</p>
-        <p>Quantity = {props.qty}</p>
+
         {
           props.cart == undefined ? <Button variant="info" className="btnProduct" onClick={() => addToCart()}>
             Add To Cart
           </Button> : <>
+            <p>Quantity = {props.qty}</p>
             <div style={{ display: "flex" }}>
               <Button variant="info" className="btnProduct" onClick={() => increment(props.id)}>
                 +
@@ -115,7 +116,7 @@ const ProductCard = (props) => {
               Remove
             </Button>
           </>
-        )}
+        }
       </div>
     </div>
   );
