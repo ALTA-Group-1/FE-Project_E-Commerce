@@ -5,16 +5,16 @@ import axios from 'axios';
 import { useCookies } from 'react-cookie';
 
 const ProductCard = (props) => {
-  const cookies = useCookies()
+  const cookies = useCookies();
   var axios = require('axios');
 
   const data = {
-    "productID": props.id
-  }
+    productID: props.id,
+  };
   const config = {
     headers: { Authorization: `Bearer ${props.token}` },
   };
-  const url = "http://13.57.49.65/carts"
+  const url = 'http://13.57.49.65/carts';
 
   const addToCart = () => {
     axios
@@ -26,21 +26,25 @@ const ProductCard = (props) => {
         console.log(error.response.data);
       });
     console.log(props.token);
-  }
+  };
 
   return (
     <div>
       <div className="containerCard">
-        <Card.Img variant="top" className="image" src={props.image} />
+        <Card.Img variant="top" className="imagepc" src={props.image} onClick={props.detail} />
         <a href="" className="title">
-          <Card.Title className="title">{props.name}</Card.Title>
+          <Card.Title className="title" onClick={props.detail}>
+            {props.name}
+          </Card.Title>
         </a>
-        <p>Rp {props.price}</p>
-        {
-          props.cart == undefined ? <Button variant="info" className="btnProduct" onClick={() => addToCart()}>
+        <p onClick={props.detail}>Rp {props.price}</p>
+        {props.cart == undefined ? (
+          <Button variant="info" className="btnProduct" onClick={() => addToCart()}>
             Add To Cart
-          </Button> : <>
-            <div style={{ display: "flex" }}>
+          </Button>
+        ) : (
+          <>
+            <div style={{ display: 'flex' }}>
               <Button variant="info" className="btnProduct" onClick={() => addToCart()}>
                 +
               </Button>
@@ -52,7 +56,7 @@ const ProductCard = (props) => {
               Remove
             </Button>
           </>
-        }
+        )}
       </div>
     </div>
   );
