@@ -28,14 +28,30 @@ const Dashboard = () => {
       .get(urlProfile, config)
       .then((response) => {
         setProfile(response.data.data)
+        setCookies("name", response.data.data.name, "/")
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
+  const [product, setProduct] = useState()
+  console.log(product);
+  const getProduct = async () => {
+    await axios
+      .get("http://13.57.49.65/products")
+      .then((response) => {
+        setProduct(response.data.data)
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      })
+  }
+
+
   useEffect(() => {
     getProfile()
+    getProduct()
   }, [])
 
 
@@ -103,13 +119,31 @@ const Dashboard = () => {
         </Button>
       </div>
       <br></br>
-      <Navbar value={cookies.token == ""? false : true} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
+      <Navbar />
       <Category />
-      <Button className="btnd" variant="info" onClick={() => goAddProduct()}>
-        Create Product
-      </Button>
+      {
+        cookies.token !== undefined ?
+          <>
+            <Button className="btnd" variant="info" onClick={() => goAddProduct()}>
+              Create Product
+            </Button>
+          </> :
+          null
+      }
       <div className="containerdb">
-        <ProductCard />
+        {
+          product == undefined ?
+            <>
+            </> :
+            <>
+              {
+                product.map((item) => {
+                  return (
+                    <ProductCard image={item.images} name={item.name} price={item.price} />
+                  )
+                })
+              }</>
+        }
       </div>
       <div>
         <Footer />

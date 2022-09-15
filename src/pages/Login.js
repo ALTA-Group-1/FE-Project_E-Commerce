@@ -48,7 +48,9 @@ const Login = () => {
             }
         })
             .then(function (response) {
+                setCookies("token", response.data.data, "/")
                 console.log(response.data);
+                navigate("/")
             })
             .catch(function (error) {
                 console.log(error.response.data);

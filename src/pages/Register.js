@@ -42,6 +42,7 @@ const Register = () => {
         await axios(config)
             .then(function (response) {
                 console.log(JSON.stringify(response.data));
+                navigate("/login")
             })
             .catch(function (error) {
                 console.log(error.response.data);
