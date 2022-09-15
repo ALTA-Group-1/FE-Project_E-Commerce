@@ -1,16 +1,16 @@
 .bodydetail {
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 
 .containerdetail {
-  padding-top: 20px;
+  padding-top: 50px;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
 }
 
 .cold1 {
-  padding-top: 40px;
+  padding-top: 0px;
   padding-right: 250px;
 }
 
@@ -19,12 +19,13 @@ p {
 }
 
 .imgd {
-  width: 250px;
-  height: 250px;
+  width: 400px;
+  height: 400px;
+  margin-right: 50px;
 }
 
 .cold2 {
-  padding-top: 35px;
+  padding-top: 55px;
   /* width: 5px; */
 }
 
