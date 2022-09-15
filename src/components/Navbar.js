@@ -48,10 +48,7 @@ const NavBar = (props) => {
                     {cookies.name} <img src="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" width="25" height="25"></img>
                   </Nav.Link>
                   <Nav.Link onClick={() => handleLogout()}>
-                    Logout
-                  </Nav.Link>
-                  <Nav.Link href="#action2">
-                    Log Out
+                    Log out
                   </Nav.Link>
                 </>
               ) : (
