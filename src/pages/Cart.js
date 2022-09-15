@@ -4,9 +4,37 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col, Card } from 'react-bootstrap';
+import ProductCard from '../components/ProductCard';
+import { useCookies } from 'react-cookie';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 const Cart = () => {
+  const [cookies, setCookies] = useCookies()
   const navigate = useNavigate();
+  const [cart, setCart] = useState()
+  console.log(cookies.token);
+  const config = {
+    headers: { Authorization: `Bearer ${cookies.token}` },
+  };
+  const urlCart = 'http://13.57.49.65/carts';
+
+  const getCart = async () => {
+    await axios
+      .get(urlCart, config)
+      .then((response) => {
+        setCart(response.data.data)
+      })
+      .catch((error) => {
+        console.log(error.response.data);
+      });
+  };
+
+  useEffect(() => {
+    getCart()
+  }, [])
+
+
   return (
     <div>
       <div className='bodycart'>
@@ -18,22 +46,20 @@ const Cart = () => {
             </Col>
           </Row>
         </Container>
-        <div>
-          <Container className="containercart2">
-            <Row className="row">
-              <Col md={{ span: 5, offset: 0 }} className="colcart1">
-                <Card.Img variant="top" className="imgcart" src="https://images.tokopedia.net/img/cache/300-square/product-1/2020/9/2/48125333/48125333_eb395cfa-025e-4c35-b52e-bb128514db19_700_700.webp?ect=4g" alt="gambar" />
-              </Col>
-              <Col md={{ span: 4, offset: 0 }} className="colcart2">
-                <h4>Product</h4>
-                <p>Rp 123</p>
-              </Col>
-              <Col md={{ span: 3, offset: 0 }} className="colcart3">
-                <p>Qty</p>
-                <p>Rp 123</p>
-              </Col>
-            </Row>
-          </Container>
+        <div className='containerdb'>
+          {
+            cart == undefined ?
+              <>
+              </> :
+              <>
+                {
+                  cart.map((item) => {
+                    return (
+                      <ProductCard image={item.images} name={item.name} price={item.price} id={item.id} token={cookies.token} cart={"y"}/>
+                    )
+                  })
+                }</>
+          }
         </div>
       </div>
       <Footer />

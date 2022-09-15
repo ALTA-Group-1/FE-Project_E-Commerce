@@ -89,6 +89,8 @@ const Dashboard = () => {
 
   return (
     <div>
+      {cookies.token}
+      {cookies.name}
       <div>
         <Button variant="primary" onClick={() => goAddProduct()}>
           go add product
@@ -139,7 +141,7 @@ const Dashboard = () => {
               {
                 product.map((item) => {
                   return (
-                    <ProductCard image={item.images} name={item.name} price={item.price} />
+                    <ProductCard image={item.images} name={item.name} price={item.price} id={item.id} token={cookies.token}/>
                   )
                 })
               }</>
