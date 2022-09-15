@@ -36,6 +36,7 @@ const Cart = () => {
   }, [])
 
 
+
   return (
     <div>
       <div className='bodycart'>
@@ -60,7 +61,7 @@ const Cart = () => {
                 {
                   cart.map((item) => {
                     return (
-                      <ProductCard image={item.images} name={item.name} price={item.price} id={item.id} token={cookies.token} cart={"y"} />
+                      <ProductCard image={item.images} name={item.name} price={item.price} id={item.id} token={cookies.token} cart={"y"} qty={item.quantity}/>
                     )
                   })
                 }</>
