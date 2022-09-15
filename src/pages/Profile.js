@@ -47,7 +47,7 @@ useEffect(() => {
 
   return (
     <>
-      <Navbar value={cookies.token == undefined ? false : true} name={profile.name} account="https://i.kym-cdn.com/photos/images/facebook/001/927/176/f65" />
+      <Navbar />
       <Container className="containerprof">
         <Row>
           <Col sm={8}>
