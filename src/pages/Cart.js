@@ -46,6 +46,7 @@ const Cart = () => {
             </Col>
           </Row>
         </Container>
+        {console.log(cart)}
         <div className='containerdb'>
           {
             cart == undefined ?

@@ -21,7 +21,7 @@ const Profile = () => {
 
   const urlProfile = "http://13.57.49.65/users"
   const config = {
-    headers: { Authorization: `Bearer ${cookies.Token}` }
+    headers: { Authorization: `Bearer ${cookies.token}` }
   };
 
   const [profile, setProfile] = useState({})
@@ -52,14 +52,17 @@ useEffect(() => {
         <Row>
           <Col sm={8}>
             <h2>Profile</h2>
-            <h5>Nama Lengkap :</h5>
+            <h5>Nama Lengkap : {profile.name}</h5>
             <h5>Nomor Telephone :</h5>
-            <h5>Alamat :</h5>
-            <h5>Email :</h5>
+            <h5>Alamat : {profile.address}</h5>
+            <h5>Email : {profile.email}</h5>
           </Col>
           <Col sm={4}>
             <Button variant="secondary" onClick={editPage}>
               Edit Profile
+            </Button>
+            <Button variant="danger" onClick={editPage}>
+              Delete Profile
             </Button>
           </Col>
         </Row>

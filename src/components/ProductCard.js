@@ -18,7 +18,7 @@ const ProductCard = (props) => {
 
   const addToCart = () => {
     axios
-      .post(url,data,config)
+      .post(url, data, config)
       .then(function (response) {
         console.log(JSON.stringify(response.data));
       })
@@ -37,9 +37,21 @@ const ProductCard = (props) => {
         </a>
         <p>Rp {props.price}</p>
         {
-          props.cart == undefined? <Button variant="info" className="btnProduct" onClick={() => addToCart()}>
-          Add To Cart
-        </Button> : null
+          props.cart == undefined ? <Button variant="info" className="btnProduct" onClick={() => addToCart()}>
+            Add To Cart
+          </Button> : <>
+            <div style={{ display: "flex" }}>
+              <Button variant="info" className="btnProduct" onClick={() => addToCart()}>
+                +
+              </Button>
+              <Button variant="info" className="btnProduct" onClick={() => addToCart()}>
+                -
+              </Button>
+            </div>
+            <Button variant="info" className="btnProduct" onClick={() => addToCart()}>
+              Remove
+            </Button>
+          </>
         }
       </div>
     </div>
