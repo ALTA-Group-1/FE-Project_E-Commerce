@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Card, Row, Col, Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
 import '../style/Login.css';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
@@ -64,12 +65,12 @@ const Login = () => {
 
     return (
         <div>
-            <div href="#">
+            <div href="#" style={{ paddingTop: '0px' }}>
                 <img src="https://cdn.discordapp.com/attachments/1017710027777257567/1018214691748708542/Si_Murah1.png" className="img" alt="logo" onClick={() => navigate('/')} />
             </div>
-            <Container style={{ paddingTop: '0px' }}>
+            <Container style={{ padding: '0px 0px 80px 0px' }}>
                 <Card style={{ width: '25rem' }} className="card">
-                    <div style={{ margin: '20px 20px' }}>
+                    <div style={{ margin: '20px 70px' }}>
                         <h2>LOGIN ACCOUNT</h2>
                     </div>
                     <Form style={{ margin: '0px 20px' }}>
@@ -96,12 +97,12 @@ const Login = () => {
                     <div style={{ margin: '20px 20px', textAlign: 'center' }}>
                         Belum punya akun? <Link to="/register">Register</Link>
                     </div>
-                    <Button variant="info" style={{ margin: '20px 20px', alignItems: 'center' }} onClick={() => submitLogin()}>
+                    <Button variant="info" style={{ margin: '20px 98px', alignItems: 'center' }} onClick={() => submitLogin()}>
                         LOGIN
                     </Button>
                 </Card>
             </Container>
-
+            <Footer />
         </div>
     )
 }

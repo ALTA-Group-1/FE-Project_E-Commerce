@@ -19,7 +19,7 @@ const NavBar = (props) => {
   }
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" expand="lg" style={{boxShadow: "0px 1px 10px 0px"}}>
         <Container fluid className="align-items-center justify-content-center">
           <Navbar.Brand href="/" className="ms-5 ps-5 me-0">
             <img src="https://cdn.discordapp.com/attachments/1017710027777257567/1018214691748708542/Si_Murah1.png" style={{ maxWidth: 100, maxHeight: 100 }} onClick={() => navigate('/')}></img>{' '}

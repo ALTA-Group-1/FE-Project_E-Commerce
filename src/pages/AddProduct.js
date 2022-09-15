@@ -48,7 +48,7 @@ const AddProduct = () => {
   return (
     <div>
       <NavBar />
-      <div style={{ margin: '50px 0px' }}>
+      <div style={{ margin: '50px 0px 100px 0px' }}>
         <Container className="title-create">
           <h1>Create Product</h1>
         </Container>
@@ -102,7 +102,7 @@ const AddProduct = () => {
           <Button variant="info" type="submit" style={{ marginRight: '20px' }} onClick={() => klikSubmit()}>
             Submit
           </Button>
-          <Button variant="info" type="submit">
+          <Button variant="info" type="submit" onClick={() => navigate('/')}>
             Cancel
           </Button>
         </Container>

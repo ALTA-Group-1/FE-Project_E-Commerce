@@ -7,20 +7,20 @@ import Footer from '../components/Footer';
 import '../style/MyProduct.css';
 
 const MyStore = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
-    <div>
+    <div style={{ paddingBottom: '50px' }}>
       <NavBar />
-      <div style={{ margin: '50px 0px'}}>
+      <div style={{ margin: '50px 0px' }}>
         <Container className="titlepro">
-            <h1>My Product</h1>
+          <h1>My Product</h1>
         </Container>
         <MyProduct />
         <MyProduct />
       </div>
       <Footer />
     </div>
-  )
-}
+  );
+};
 
-export default MyStore
+export default MyStore;
