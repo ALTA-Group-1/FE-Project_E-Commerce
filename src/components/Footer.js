@@ -1,45 +1,25 @@
 import React from "react";
-import {
-    Box,
-    Container,
-    Row,
-    Column,
-    FooterLink,
-    Heading,
-} from "./FooterStyles";
+import { Col } from "react-bootstrap";
+import "../style/Footer.css"
 
 const Footer = () => {
     return (
-        <Box><Container>
-            <Row>
-                <Column>
-                    <Heading>About Us</Heading>
-                    
-                </Column>
-                <Column>
-                    <Heading>Services</Heading>
-                   
-                </Column>
-                <Column>
-                    <Heading>Contact Us</Heading>
-                    
-                </Column>
-                <Column>
-                    <Heading>Social Media</Heading>
-                    
-                </Column>
-            </Row>
-        </Container>
-            <h3 style={{
-                color: "#d9d9d9",
-                textAlign: "center",
-                marginTop: "-50px",
-                borderTop: "solid #e6e6e6"
-            }}>
-                &copy;Copyright ALTA-FE08-1
-            </h3>
-
-        </Box>
+        <footer>
+            <div className="atas">
+                <div className="text">
+                    <div className="row">
+                        <div className="col"> Product</div>
+                        <div className="col"> Contact</div>
+                        <div className="col"> Social</div>
+                        <div className="col"> About</div>
+                    </div>
+                </div>
+            </div>
+            <div className="bawah">
+                <div className="text">&copy;Copyright ALTA-FE-08-GROUP1
+                </div>
+            </div>
+        </footer>
     );
 };
 export default Footer;
