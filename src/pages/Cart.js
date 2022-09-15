@@ -8,6 +8,7 @@ import ProductCard from '../components/ProductCard';
 import { useCookies } from 'react-cookie';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
 
 const Cart = () => {
   const [cookies, setCookies] = useCookies()
@@ -43,6 +44,9 @@ const Cart = () => {
           <Row className="row">
             <Col>
               <h1>Shopping Cart</h1>
+              <Button variant='danger' onClick={() => navigate("/checkout")}>
+                Checkout
+              </Button>
             </Col>
           </Row>
         </Container>
@@ -56,7 +60,7 @@ const Cart = () => {
                 {
                   cart.map((item) => {
                     return (
-                      <ProductCard image={item.images} name={item.name} price={item.price} id={item.id} token={cookies.token} cart={"y"}/>
+                      <ProductCard image={item.images} name={item.name} price={item.price} id={item.id} token={cookies.token} cart={"y"} />
                     )
                   })
                 }</>

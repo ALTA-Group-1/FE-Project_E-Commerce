@@ -39,10 +39,30 @@ const Profile = () => {
       });
   }
 
-useEffect(() => {
-  getProfile()
-}, [])
+  useEffect(() => {
+    getProfile()
+  }, [])
 
+
+  const deleteUser = () => {
+    var urlData = {
+      method: 'delete',
+      url: 'http://13.57.49.65/users',
+      headers: {
+        'Authorization': `Bearer ${cookies.token}`
+      }
+    };
+
+    axios(urlData)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        alert("User Deleted")
+        navigate("/login")
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
 
   return (
@@ -58,10 +78,10 @@ useEffect(() => {
             <h5>Email : {profile.email}</h5>
           </Col>
           <Col sm={4}>
-            <Button variant="secondary" onClick={editPage}>
+            <Button variant="secondary" onClick={() => editPage()}>
               Edit Profile
             </Button>
-            <Button variant="danger" onClick={editPage}>
+            <Button variant="danger" onClick={() => deleteUser()}>
               Delete Profile
             </Button>
           </Col>
