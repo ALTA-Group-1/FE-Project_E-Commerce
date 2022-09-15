@@ -46,6 +46,7 @@ const Register = () => {
             .catch(function (error) {
                 console.log(error.response.data);
             });
+        navigate("/login")
     }
 
     // useEffect(() => {
