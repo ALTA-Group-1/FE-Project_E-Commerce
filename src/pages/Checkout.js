@@ -18,11 +18,11 @@ const Checkout = () => {
         };
 
   return (
-    <div>
+    <div style={{padding: "0px 0px 90px 0px"}}>
         <div>
             <NavBar />
         </div>
-        <div>
+        <div style={{padding: "30px"}}>
             <Container>
                 <h4>Shipping Address</h4>
             </Container>
@@ -91,12 +91,12 @@ const Checkout = () => {
                         <Form.Group as={Col} md="4" controlId="validationCustom08">
                             <Form.Label>Expiration Data</Form.Label>
                         </Form.Group>
-                        <Form.Group as={Col} md="3" controlId="validationCustom08">
-                            <Form.Control type="text" placeholder="Month" required />
+                        <Form.Group as={Col} md="3" controlId="validationCustom08" style={{padding: "30px 0px 0px 0px"}}>
+                            <Form.Control type="month" placeholder="Month" required />
                         </Form.Group>
-                        <Form.Group as={Col} md="3" controlId="validationCustom08">
+                        {/* <Form.Group as={Col} md="3" controlId="validationCustom08" style={{paddingTop: "30px"}}>
                             <Form.Control type="text" placeholder="Year" required />
-                        </Form.Group>
+                        </Form.Group> */}
                     </Row>
                 </Form>
             </Container>
