@@ -9,12 +9,12 @@ import Category from '../components/Category';
 import axios from 'axios';
 import Footer from '../components/Footer';
 import { useCookies } from 'react-cookie';
-
+import { withRouter } from '../withRouter';
 
 const Dashboard = () => {
   const navigate = useNavigate();
 
-  const [cookies, setCookies] = useCookies()
+  const [cookies, setCookies] = useCookies();
   const config = {
     headers: { Authorization: `Bearer ${cookies.token}` },
   };
@@ -27,37 +27,42 @@ const Dashboard = () => {
     await axios
       .get(urlProfile, config)
       .then((response) => {
-        setProfile(response.data.data)
-        setCookies("name", response.data.data.name, "/")
+        setProfile(response.data.data);
+        setCookies('name', response.data.data.name, '/');
       })
       .catch((error) => {
         console.log(error);
       });
   };
 
-  const [product, setProduct] = useState()
+  const [product, setProduct] = useState();
   console.log(product);
   const getProduct = async () => {
     await axios
-      .get("http://13.57.49.65/products")
+      .get('http://13.57.49.65/products')
       .then((response) => {
-        setProduct(response.data.data)
+        setProduct(response.data.data);
       })
       .catch((error) => {
         console.log(error.response.data);
-      })
-  }
-
+      });
+  };
 
   useEffect(() => {
-    getProfile()
-    getProduct()
-  }, [])
+    getProfile();
+    getProduct();
+  }, []);
 
-
-
-
-
+  const handleDetailPage = (item) => {
+    navigate(`/detail/`, {
+      state: {
+        image: item.images,
+        name: item.name,
+        price: item.price,
+        description: item.description,
+      },
+    });
+  };
 
   const goAddProduct = () => {
     navigate('/addproduct');
@@ -129,29 +134,27 @@ const Dashboard = () => {
       <br></br>
       <Navbar />
       <Category />
-      {
-        cookies.token !== undefined ?
-          <>
-            <Button className="btnd" variant="info" onClick={() => goAddProduct()}>
-              Create Product
-            </Button>
-          </> :
-          null
-      }
+      {cookies.token !== undefined ? (
+        <>
+          <Button className="btnd" variant="info" onClick={() => goAddProduct()}>
+            Create Product
+          </Button>
+        </>
+      ) : null}
       <div className="containerdb">
-        {
-          product == undefined ?
-            <>
-            </> :
-            <>
-              {
-                product.map((item) => {
-                  return (
-                    <ProductCard image={item.images} name={item.name} price={item.price} id={item.id} token={cookies.token}/>
-                  )
-                })
-              }</>
-        }
+        {product == undefined ? (
+          <></>
+        ) : (
+          <>
+            {product.map((item, index) => {
+              return (
+                <div key={index}>
+                  <ProductCard image={item.images} name={item.name} price={item.price} id={item.id} token={cookies.token} detail={() => handleDetailPage(item)} />
+                </div>
+              );
+            })}
+          </>
+        )}
       </div>
       <div>
         <Footer />
@@ -160,4 +163,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default withRouter(Dashboard);

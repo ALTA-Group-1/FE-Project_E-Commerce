@@ -11,12 +11,12 @@ const ProductCard = (props) => {
   var axios = require('axios');
 
   const data = {
-    "productID": props.id
-  }
+    productID: props.id,
+  };
   const config = {
     headers: { Authorization: `Bearer ${props.token}` },
   };
-  const url = "http://13.57.49.65/carts"
+  const url = 'http://13.57.49.65/carts';
 
   const addToCart = () => {
     axios
@@ -91,9 +91,11 @@ const ProductCard = (props) => {
   return (
     <div>
       <div className="containerCard">
-        <Card.Img variant="top" className="image" src={props.image} />
+        <Card.Img variant="top" className="imagepc" src={props.image} onClick={props.detail} />
         <a href="" className="title">
-          <Card.Title className="title">{props.name}</Card.Title>
+          <Card.Title className="title" onClick={props.detail}>
+            {props.name}
+          </Card.Title>
         </a>
         <p>Rp {props.price}</p>
         <p>Quantity = {props.qty}</p>
@@ -113,7 +115,7 @@ const ProductCard = (props) => {
               Remove
             </Button>
           </>
-        }
+        )}
       </div>
     </div>
   );
