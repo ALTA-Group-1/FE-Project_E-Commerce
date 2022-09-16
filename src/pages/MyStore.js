@@ -36,7 +36,7 @@ const MyStore = () => {
   return (
     <div style={{ paddingBottom: '50px' }}>
       <NavBar />
-      <div style={{ margin: '50px 0px' }}>
+      <div style={{ margin: '120px 0 0 0' }}>
         <Container className="titlepro">
           <h1>My Product</h1>
         </Container>

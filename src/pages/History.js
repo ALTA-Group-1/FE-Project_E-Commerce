@@ -11,7 +11,7 @@ const History = () => {
     <div>
       <div className='bodyhistory'>
         <Navbar />
-        <Container className="containerhist1">
+        <Container className="containerhist1" style={{margin: '120px 120px 0 120px'}}>
           <Row className="row">
             <Col>
               <h1>Order History</h1>

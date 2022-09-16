@@ -56,7 +56,7 @@ const EditProfile = () => {
   return (
     <>
       <Navbar />
-      <Container className="containerep">
+      <Container className="containerep" style={{margin: '120px'}}>
         <Row className="row">
           <Col className="col">
             <h2>Edit Profile</h2>

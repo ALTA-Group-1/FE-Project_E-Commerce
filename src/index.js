@@ -4,6 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import * as Sentry from "@sentry/browser";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -11,6 +12,15 @@ root.render(
     <App />
   </React.StrictMode>
 );
+// Add an attachment
+Sentry.configureScope(scope => {
+  scope.addAttachment({ filename: "index.js", data: "Some content" });
+});
+
+// Clear attachments
+Sentry.configureScope(scope => {
+  scope.clearAttachments();
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

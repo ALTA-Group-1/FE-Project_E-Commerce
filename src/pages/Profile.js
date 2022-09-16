@@ -68,7 +68,7 @@ const Profile = () => {
   return (
     <>
       <Navbar />
-      <Container className="containerprof">
+      <Container className="containerprof" style={{margin: '120px'}}>
         <Row>
           <Col sm={8}>
             <h2>Profile</h2>
