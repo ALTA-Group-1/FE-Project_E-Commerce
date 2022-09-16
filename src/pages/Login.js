@@ -102,7 +102,6 @@ const Login = () => {
                     </Button>
                 </Card>
             </Container>
-            <Footer />
         </div>
     )
 }

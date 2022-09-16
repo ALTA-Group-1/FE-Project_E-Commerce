@@ -117,11 +117,11 @@ const Checkout = () => {
 
     
     return (
-        <div style={{ padding: "0px 0px 90px 0px" }}>
+        <div style={{ padding: "0px 0px 0px 0px" }}>
             <div>
                 <NavBar />
             </div>
-            <div style={{ padding: "30px" }}>
+            <div className="cek">
                 <Container>
                     <h4>Shipping Address</h4>
                 </Container>
