@@ -88,50 +88,9 @@ const Dashboard = () => {
   const goMyStore = () => {
     navigate('/mystore');
   };
-  const goMyProfile = () => {
-    navigate('/myprofile');
-  };
-  const goCheckout = () => {
-    navigate('/checkout');
-  };
 
   return (
     <div>
-      {cookies.token}
-      {cookies.name}
-      <div>
-        <Button variant="primary" onClick={() => goAddProduct()}>
-          go add product
-        </Button>
-        <Button variant="primary" onClick={() => goCart()}>
-          go cart
-        </Button>
-        <Button variant="primary" onClick={() => goDetail()}>
-          go detail
-        </Button>
-        <Button variant="primary" onClick={() => goEditProduct()}>
-          go edit product
-        </Button>
-        <Button variant="primary" onClick={() => goEditProfile()}>
-          go edit profile
-        </Button>
-        <Button variant="primary" onClick={() => goHistory()}>
-          go history
-        </Button>
-        <Button variant="primary" onClick={() => goLogin()}>
-          go login
-        </Button>
-        <Button variant="primary" onClick={() => goMyStore()}>
-          go my store
-        </Button>
-        <Button variant="primary" onClick={() => goMyProfile()}>
-          go my profile
-        </Button>
-        <Button variant="primary" onClick={() => goCheckout()}>
-          go Checkout
-        </Button>
-      </div>
-      <br></br>
       <Navbar />
       <Category />
       {cookies.token !== undefined ? (
